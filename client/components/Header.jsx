@@ -9,6 +9,7 @@ function Header () {
           <Link to="/" className="">What Movie</Link>
           <ul id="nav-mobile" className="">
             <li><Link to="/movies">Movies</Link></li>
+            <li><Link to="/reviews">Reviews</Link></li>
           </ul>
         </div>
       </nav>

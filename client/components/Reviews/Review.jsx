@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Movie (props) {
-  const {id, movieName, otherName} = props.movie
+function Review (props) {
+const {id, movieName, otherName} = props.movie
   return (
     <div className="">
       <div className="">
@@ -12,7 +12,7 @@ function Movie (props) {
               <table className="">
                 <thead>
                   <tr>
-                    <th>Movie Name</th>
+                    <th>Review Name</th>
                     <th>{movieName}</th>
                   </tr>
                 </thead>
@@ -31,4 +31,4 @@ function Movie (props) {
   )
 }
 
-export default Movie
+export default Review
