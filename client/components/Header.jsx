@@ -8,7 +8,7 @@ function Header () {
         <div className="">
           <Link to="/" className="">What Movie</Link>
           <ul id="nav-mobile" className="">
-            <li><Link to="/players">Movies</Link></li>
+            <li><Link to="/movies">Movies</Link></li>
           </ul>
         </div>
       </nav>

@@ -1,13 +1,13 @@
 import request from 'superagent'
 
-export function getPlayers () {
-  return request.get('/api/v1/players/players')
+export function getMovies () {
+  return request.get('/api/v1/movies/movies')
     .then(result => {
-      const players = result.body
-      return players.map(player => {
+      const movies = result.body
+      return movies.map(movie => {
         return Object.assign(
           {},
-          player
+          movie
         )
       })
     })

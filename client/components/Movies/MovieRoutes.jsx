@@ -1,26 +1,26 @@
 import React from 'react'
 import {Route, Switch} from 'react-router-dom'
 
-import Players from './Players'
-import Player from './Player'
-import { getPlayers } from '../../client-api'
+import Movies from './Movies'
+import Movie from './Movie'
+import { getMovies } from '../../client-api'
 
-class PlayerRoutes extends React.Component {
+class MovieRoutes extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      players: [],
+      movies: [],
       errorMessage: ''
     }
-    this.fetchPlayers = this.fetchPlayers.bind(this)
+    this.fetchMovies = this.fetchMovies.bind(this)
   }
   componentWillMount () {
-    this.fetchPlayers()
+    this.fetchMovies()
   }
-  fetchPlayers () {
-    return getPlayers()
-      .then(players => {
-        this.setState({ players: players })
+  fetchMovies () {
+    return getMovies()
+      .then(movies => {
+        this.setState({ movies: movies })
       })
       .catch(err => {
         this.setState({ errorMessage: err.message })
@@ -32,24 +32,24 @@ class PlayerRoutes extends React.Component {
         <Switch>
           <Route
             exact
-            path='/players'
+            path='/movies'
             render={ (props) =>
-             <Players
-               players={this.state.players}
-               fetchPlayers={this.fetchPlayers}
+             <Movies
+               movies={this.state.movies}
+               fetchMovies={this.fetchMovies}
                {...props}
              />
             }
           />
           <Route
             exact
-            path='/players/player/:id'
+            path='/movies/movie/:id'
             render={(props) =>
-              <Player
-                player={this.state.players.find((player) =>
-                  player.id === Number(props.match.params.id))
+              <Movie
+                movie={this.state.movies.find((movie) =>
+                  movie.id === Number(props.match.params.id))
                 }
-                fetchPlayers={this.fetchPlayers}
+                fetchMovies={this.fetchMovies}
                 {...props}
               />
             }
@@ -61,4 +61,4 @@ class PlayerRoutes extends React.Component {
     )
   }
 }
-module.exports = PlayerRoutes
+module.exports = MovieRoutes
