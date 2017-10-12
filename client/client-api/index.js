@@ -15,3 +15,19 @@ export function getMovies () {
       throw Error('Cannot GET Players!')
     })
 }
+
+export function getReviews () {
+  return request.get('/api/v1/movies/movies')
+    .then(result => {
+      const movies = result.body
+      return movies.map(movie => {
+        return Object.assign(
+          {},
+          movie
+        )
+      })
+    })
+    .catch(err => {
+      throw Error('Cannot GET Players!')
+    })
+}
