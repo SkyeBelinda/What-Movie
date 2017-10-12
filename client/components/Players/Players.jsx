@@ -3,16 +3,11 @@ import { Link } from 'react-router-dom'
 
 function Players (props) {
   const players = props.players
-  
+
   return (
     <div className='players'>
       <div className='row valign-wrapper'>
         <h4 className="col s12">Players</h4>
-          <Link to='/players/player/add'>
-            <div className="waves-effect waves-light btn">
-              Add Player
-            </div>
-          </Link>
       </div>
       <table className="striped centered">
         <thead>

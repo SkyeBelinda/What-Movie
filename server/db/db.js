@@ -6,12 +6,7 @@ function getPlayers() {
   return knex('Players')
     .select()
 }
-function getGames() {
-  return knex('Games')
-    .select()
-}
 
 module.exports = {
-  getPlayers,
-  getGames
+  getPlayers
 }

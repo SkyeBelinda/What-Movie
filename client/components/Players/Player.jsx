@@ -41,13 +41,6 @@ function Player (props) {
                 </tbody>
               </table>
             </div>
-            <div className="card-action">
-              <Link to={`/players/player/${id}/edit/`}>
-                <div className="center">
-                  <div className="waves-effect waves-light btn">Edit Player Details</div>
-              </div>
-              </Link>
-            </div>
           </div>
         </div>
       </div>
@@ -55,14 +48,4 @@ function Player (props) {
   )
 }
 
-Player.defaultProps = {
-  player: {
-    firstName: '',
-    surName: '',
-    knickName: '',
-    favHand: '',
-    favHeadsUp: '',
-    leastFavHeadsUp: ''
-  }
-}
 export default Player
