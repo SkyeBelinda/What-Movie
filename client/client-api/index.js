@@ -31,26 +31,3 @@ export function getGames() {
       throw Error('Cannot GET Games!')
     })
 }
-
-export function addPlayer (player) {
-  return request.post('/api/v1/players/player/add')
-    .send(player)
-    .then(result => {
-      return result.body
-    })
-    .catch(err => {
-      throw Error('Cannot POST a Post!')
-    })
-}
-
-export function updatePlayer (player) {
-  const{id} = player
-  return request.put(`/api/v1/players/player/${id}/edit`)
-    .send(player)
-    .then(result => {
-      return result.body
-    })
-    .catch(err => {
-      throw Error('Cannot PUT a Post!')
-    })
-}

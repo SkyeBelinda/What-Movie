@@ -3,8 +3,6 @@ import {Route, Switch} from 'react-router-dom'
 
 import Players from './Players'
 import Player from './Player'
-import PlayerEdit from './PlayerEdit'
-import PlayerAdd from './PlayerAdd'
 import { getPlayers } from '../../client-api'
 
 class PlayerRoutes extends React.Component {
@@ -45,32 +43,9 @@ class PlayerRoutes extends React.Component {
           />
           <Route
             exact
-            path='/players/player/add'
-            render={(props) =>
-              <PlayerAdd
-                fetchPlayers={this.fetchPlayers}
-                {...props}
-              />
-            }
-          />
-          <Route
-            exact
             path='/players/player/:id'
             render={(props) =>
               <Player
-                player={this.state.players.find((player) =>
-                  player.id === Number(props.match.params.id))
-                }
-                fetchPlayers={this.fetchPlayers}
-                {...props}
-              />
-            }
-          />
-          <Route
-            exact
-            path='/players/player/:id/edit'
-            render={(props) =>
-              <PlayerEdit
                 player={this.state.players.find((player) =>
                   player.id === Number(props.match.params.id))
                 }
