@@ -28,7 +28,7 @@ class PlayerRoutes extends React.Component {
   }
   render () {
     return (
-      <div className="player-routes">
+      <div className="">
         <Switch>
           <Route
             exact

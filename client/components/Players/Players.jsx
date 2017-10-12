@@ -5,11 +5,11 @@ function Players (props) {
   const players = props.players
 
   return (
-    <div className='players'>
-      <div className='row valign-wrapper'>
-        <h4 className="col s12">Players</h4>
+    <div className=''>
+      <div className=''>
+        <h4 className="">Players</h4>
       </div>
-      <table className="striped centered">
+      <table className="">
         <thead>
           <tr>
             <th><h5>Name</h5></th>
@@ -20,12 +20,12 @@ function Players (props) {
         <tbody>
           {players.map(player => {
             const {id, firstName, surName, knickName, favHand, favHeadsUp, leastFavHeadsUp, image} = player
-            return <tr key={id} className='player'>
+            return <tr key={id} className=''>
               <td><h5>{firstName} {surName}</h5></td>
               <td><img src={image} alt="" height="100" width="100"></img></td>
               <td>
                 <Link to={`/players/player/${id}`}>
-                  <div className="waves-effect waves-light btn">
+                  <div className="">
                     View Player
                   </div>
                 </Link>
@@ -36,8 +36,5 @@ function Players (props) {
       </table>
     </div>
   )
-}
-Players.defaultProps = {
-  players: []
 }
 export default Players

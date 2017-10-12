@@ -6,15 +6,12 @@ function Player (props) {
   const {id, firstName, surName, knickName, favHand, favHeadsUp, leastFavHeadsUp, image} = props.player
 
   return (
-    <div className="row">
-      <div className="col s12 m10 offset-m1">
-        <div className="card horizontal">
-          <div className="card-image">
-            <img src={image} alt="" height="400" width="300"></img>
-          </div>
-          <div className="card-stacked">
-            <div className="card-content">
-              <table className="striped">
+    <div className="">
+      <div className="">
+        <div className="">
+          <div className="">
+            <div className="">
+              <table className="">
                 <thead>
                   <tr>
                     <th>Name</th>
