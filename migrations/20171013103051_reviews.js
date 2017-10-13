@@ -5,6 +5,7 @@ exports.up = function (knex, Promise) {
     table.string('reviewer')
     table.string('writeup')
     table.string('rating')
+    table.string('url')
   })
 }
 

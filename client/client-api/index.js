@@ -12,7 +12,7 @@ export function getMovies() {
       })
     })
     .catch(err => {
-      throw Error('Cannot GET Players!')
+      throw Error('Cannot GET Movies!')
     })
 }
 
@@ -28,7 +28,7 @@ export function getReviews() {
       })
     })
     .catch(err => {
-      throw Error('Cannot GET Players!')
+      throw Error('Cannot GET Reviews!')
     })
 }
 
