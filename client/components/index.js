@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-export function getMovies() {
+export function getMovies () {
   return request.get('/api/v1/movies/movies')
     .then(result => {
       const movies = result.body
@@ -16,7 +16,7 @@ export function getMovies() {
     })
 }
 
-export function getReviews() {
+export function getReviews () {
   return request.get('/api/v1/reviews/reviews')
     .then(result => {
       const reviews = result.body
@@ -30,10 +30,4 @@ export function getReviews() {
     .catch(err => {
       throw Error('Cannot GET Players!')
     })
-}
-
-export function getMovieData (title) {
-  return request.get('/api/v1/movies/db')
-  .query({movie: title})
-  .then(res => res.body[0])
 }
