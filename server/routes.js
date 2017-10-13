@@ -14,9 +14,10 @@ router.get('/movies', (req, res) => {
     .catch(err => res.sendStatus(500))
 })
 
-router.get('/reviews', (req, res) => {
-  db.getReviews()
+router.get('/reviews/:id', (req, res) => {
+  db.getReviews(req.params.id)
     .then(reviews => {
+      console.log(reviews, req.params.id)
       res.json(reviews)
     })
     .catch(err => res.sendStatus(500))

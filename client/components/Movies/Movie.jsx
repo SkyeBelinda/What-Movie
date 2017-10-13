@@ -1,27 +1,32 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {getMovieData} from '../../client-api'
+import {getMovieData, getReviews} from '../../client-api'
 
 class Movie extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      data: null
+      data: null,
+      reviews: []
     }
   }
   componentDidMount() {
-    this.getSingleMovieData(this.props.movie.title)
+    this.getSingleMovieData(this.props.movie.title, this.props.movie.id)
   }
   componentWillReceiveProps(props) {
-    this.getSingleMovieData(props.movie.title)
+    this.getSingleMovieData(props.movie.title, props.movie.id)
   }
-  getSingleMovieData(title) {
+  getSingleMovieData(title, id) {
     if (title) getMovieData(title)
       .then(data => this.setState({data}) )
+    if (id) getReviews(id)
+      .then(reviews => this.setState({ reviews }))
+  }
+  getMovieReviews(id) {
+    
   }
   render () {
-    console.log(this.state)
-    const {data} = this.state
+    const {data, reviews} = this.state
     const {id, title, plot} = this.props.movie
     return (
       <div className="">
@@ -31,9 +36,11 @@ class Movie extends React.Component {
           <h3>{data.overview}</h3>
           <img src={`http://image.tmdb.org/t/p/w185/${data.backdrop_path}`} />
           <img src={`http://image.tmdb.org/t/p/w185/${data.poster_path}`} />
-          <h3>{reviewer}'s Review:</h3>
-          <img src={image}/>
-          <p>{writeup}</p>
+          <hr />
+          <div key={reviews[0].id}>
+            <h1><strong>{reviews[0].reviewer+ ": "} </strong>{reviews[0].writeup}</h1>
+            <img src={reviews[0].url} />
+          </div>
         </div>}
       </div>
     )
@@ -42,7 +49,7 @@ class Movie extends React.Component {
 
 Movie.defaultProps = {
   movie: {
-    id: 1,
+    id: null,
     title: null,
     plot: 'Jeff'
   }
