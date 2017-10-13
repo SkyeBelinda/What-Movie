@@ -24,7 +24,7 @@ function Movies (props) {
             return <tr key={id} className=''>
               <td><h5>{title}</h5></td>
               <td><h5>{plot}</h5></td>
-              <td><img src={url}></img></td>
+              <td><img src={url} alt="" height="500" width="400"></img></td>
               <td>
                 <Link to={`/movies/movie/${id}`}>
                   <div className="">
