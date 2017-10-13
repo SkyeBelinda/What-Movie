@@ -23,6 +23,7 @@ function Movies (props) {
             return <tr key={id} className=''>
               <td><h5>{title}</h5></td>
               <td><h5>{plot}</h5></td>
+
               <td><img src={url} height='400' width='300' alt='movie pic'></img></td>
               <td>
                 <Link to={`/movies/movie/${id}`}>
