@@ -16,16 +16,10 @@ export function getMovies() {
     })
 }
 
-export function getReviews() {
-  return request.get('/api/v1/reviews/reviews')
+export function getReviews(id) {
+  return request.get('/api/v1/movies/reviews/'+ id)
     .then(result => {
-      const reviews = result.body
-      return reviews.map(review => {
-        return Object.assign(
-          {},
-          review
-        )
-      })
+      return result.body
     })
     .catch(err => {
       throw Error('Cannot GET Reviews!')
