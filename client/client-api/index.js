@@ -17,13 +17,13 @@ export function getMovies () {
 }
 
 export function getReviews () {
-  return request.get('/api/v1/movies/movies')
+  return request.get('/api/v1/reviews/reviews')
     .then(result => {
-      const movies = result.body
-      return movies.map(movie => {
+      const reviews = result.body
+      return reviews.map(review => {
         return Object.assign(
           {},
-          movie
+          review
         )
       })
     })

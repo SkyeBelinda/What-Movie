@@ -7,12 +7,12 @@ function getMovies () {
     .select()
 }
 
-function getReview () {
+function getReviews () {
   return knex('reviews')
     .select()
 }
 
 module.exports = {
   getMovies,
-  getReview
+  getReviews
 }
