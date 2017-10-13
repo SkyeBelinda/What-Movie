@@ -6,16 +6,16 @@ const request = require('superagent')
 
 const db = require('./db/db')
 
-router.get('/', (req, res) => {
+router.get('/movies', (req, res) => {
   db.getMovies()
-    .then(result => { 
-      res.json(result) 
+    .then(result => {
+      res.json(result)
     })
     .catch(err => res.sendStatus(500))
 })
 
-router.get('/movies', (req, res) => {
-  db.getReview()
+router.get('/reviews', (req, res) => {
+  db.getReviews()
     .then(reviews => {
       res.json(reviews)
     })
@@ -40,4 +40,3 @@ router.get('/db', (req, res) => {
 })
 
 module.exports = router
-
