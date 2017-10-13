@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 function Movies (props) {
   const movies = props.movies
-  console.log(movies)
   return (
     <div className=''>
       <div className=''>
@@ -24,7 +23,8 @@ function Movies (props) {
             return <tr key={id} className=''>
               <td><h5>{title}</h5></td>
               <td><h5>{plot}</h5></td>
-              <td><img src={url} alt="" height="500" width="400"></img></td>
+
+              <td><img src={url} height='400' width='300' alt='movie pic'></img></td>
               <td>
                 <Link to={`/movies/movie/${id}`}>
                   <div className="">

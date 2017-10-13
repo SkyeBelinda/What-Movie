@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Review (props) {
-const {id, movieName, otherName} = props.movie
+  console.log(props);
+const {id, reviewer, writeup, rating} = props.review
   return (
     <div className="">
       <div className="">
@@ -12,14 +13,18 @@ const {id, movieName, otherName} = props.movie
               <table className="">
                 <thead>
                   <tr>
-                    <th>Review Name</th>
-                    <th>{movieName}</th>
+                    <th>Reviewer</th>
+                    <th>{reviewer}</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Other Name</td>
-                    <td>{otherName}</td>
+                    <td>Writeup</td>
+                    <td>{writeup}</td>
+                  </tr>
+                  <tr>
+                    <td>Rating</td>
+                    <td>{rating}</td>
                   </tr>
                 </tbody>
               </table>
