@@ -31,6 +31,9 @@ class Movie extends React.Component {
           <h3>{data.overview}</h3>
           <img src={`http://image.tmdb.org/t/p/w185/${data.backdrop_path}`} />
           <img src={`http://image.tmdb.org/t/p/w185/${data.poster_path}`} />
+          <h3>{reviewer}'s Review:</h3>
+          <img src={image}/>
+          <p>{writeup}</p>
         </div>}
       </div>
     )
