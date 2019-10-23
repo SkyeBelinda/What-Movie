@@ -41,6 +41,19 @@ class ReviewRoutes extends React.Component {
               />
             }
           />
+          <Route
+            exact
+            path='/reviews/review/:id'
+            render={(props) =>
+              <Review
+                review={this.state.reviews.find((review) =>
+                  review.id === Number(props.match.params.id))
+                }
+                fetchReviews={this.fetchReviews}
+                {...props}
+              />
+            }
+          />
         </Switch>
         {this.state.errorMessage &&
           <h1>{this.state.errorMessage}</h1>}
@@ -48,4 +61,5 @@ class ReviewRoutes extends React.Component {
     )
   }
 }
-module.exports = ReviewRoutes
+
+export default ReviewRoutes

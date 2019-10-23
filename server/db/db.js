@@ -7,9 +7,9 @@ function getMovies () {
     .select()
 }
 
-function getReviews () {
+function getReviews (movie_id) {
   return knex('reviews')
-    .select()
+    .where('movie_id', movie_id)
 }
 
 module.exports = {
